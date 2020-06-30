@@ -1,0 +1,26 @@
+// https://leetcode.com/problems/remove-element/
+// take care of some corner cases, such as empty vector and all elements needs to be removed
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+        int end_p = nums.size() - 1;
+        for (int i = 0; i < end_p; i++) {
+            if (nums[i] == val) {
+                for (; end_p > i && nums[end_p] == val; end_p--);
+                if (end_p == 0)
+                    return 0;
+                swap(nums[i], nums[end_p]);
+                end_p--;
+            }
+        }
+        if (nums[end_p] == val) {
+            end_p--;
+        }
+
+        return end_p + 1;
+    }
+    
+};
