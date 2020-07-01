@@ -26,6 +26,9 @@ public:
 // A more subtle solution, use the property that the array is sorted,
 // Only consider the nums[i - 2] and num, i is the place which is ready to be covered 
 // O(n) complexity
+// we can see num as a fast pointer and nums[i - 2] is a slow pointer, nums[i] is ready to be covered
+
+// this solution can be easily applied to the circumstances that allow k dupilicates
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
